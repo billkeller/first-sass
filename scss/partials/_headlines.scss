@@ -1,0 +1,26 @@
+// all the headlines
+
+// use @headline mixin for these
+// default CSS props. Provide a value for color
+@mixin headline($color) {
+    font-size: $unit * 3;
+    border-bottom: 1px solid black;
+    color: $color;
+    margin: $unit * 2 0;
+}
+
+@mixin black($alpha){
+    background-color: rgba(0,0,0,$alpha);
+}
+
+.headline {
+    @include headline($color-headline);
+    @include black(.5);
+}
+
+.headline-sub {
+    @include headline(blue);
+    border-top: 1px solid green;
+    background-color: rgba(0, 0, 0, .5);
+}
+
